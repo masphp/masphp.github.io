@@ -12,7 +12,11 @@
 	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
 	<link></link>
 	<description>Personal Web Site</description>
+<<<<<<< HEAD
 	<lastBuildDate>Thu, 14 Dec 2017 19:45:37 +0000</lastBuildDate>
+=======
+	<lastBuildDate>Tue, 05 Dec 2017 14:56:22 +0000</lastBuildDate>
+>>>>>>> 7ae5a1e61fd6742b32864804e0febc91e9221444
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
