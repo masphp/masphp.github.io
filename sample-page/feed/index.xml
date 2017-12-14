@@ -10,11 +10,7 @@
 	<atom:link href="/sample-page/feed/" rel="self" type="application/rss+xml" />
 	<link></link>
 	<description>Personal Web Site</description>
-<<<<<<< HEAD
-	<lastBuildDate>Thu, 14 Dec 2017 19:46:14 +0000</lastBuildDate>
-=======
-	<lastBuildDate>Tue, 05 Dec 2017 14:58:06 +0000</lastBuildDate>
->>>>>>> 7ae5a1e61fd6742b32864804e0febc91e9221444
+	<lastBuildDate>Thu, 14 Dec 2017 19:48:52 +0000</lastBuildDate>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.8.4</generator>
