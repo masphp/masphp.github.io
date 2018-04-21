@@ -12,11 +12,11 @@
 	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
 	<link></link>
 	<description>Personal Web Site</description>
-	<lastBuildDate>Tue, 27 Mar 2018 11:41:25 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 21 Apr 2018 10:33:26 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.8.5</generator>
+	<generator>https://wordpress.org/?v=4.8.6</generator>
 
 <image>
 	<url>/wp-content/uploads/2016/07/cropped-Sailing_laser-1-32x32.png</url>
