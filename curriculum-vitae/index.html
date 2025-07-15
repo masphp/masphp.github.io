@@ -1,1 +1,550 @@
-Hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Masoud Asghari | Ph.D. in Computer Networks</title>
+    <style>
+        :root {
+            --primary: #1a365d;       /* Deep navy */
+            --secondary: #2c5282;     /* Medium blue */
+            --accent: #4299e1;        /* Bright blue */
+            --light: #f8fafc;         /* Off-white */
+            --dark: #2d3748;          /* Dark gray */
+            --text: #4a5568;          /* Soft gray */
+            --header-bg: #ebf8ff;     /* Light blue header */
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            background-color: white;
+        }
+        
+        /* Header */
+        header {
+            background: var(--header-bg);
+            color: var(--primary);
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+		
+		.profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+		
+		.profile-photo {
+            width: 110px;
+            height: 110px;
+            border-radius: 10%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin: 0.2rem 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        header p {
+            margin: 0.3rem 0;
+            font-size: 1.1rem;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--dark);
+            padding: 0.8rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+		
+		nav a.current {
+            text-decoration: underline;
+        }
+        
+        nav a:hover {
+            background: var(--accent);
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            margin-top: 0.8rem;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .button:hover {
+            background: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .research-interests {
+            columns: 2;
+            column-gap: 2rem;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+		
+		table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        img.profile {
+            float: right;
+            margin: 0 0 1rem 1.5rem;
+            border-radius: 4px;
+            max-width: 150px;
+            height: auto;
+        }
+		.paper-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: normal;
+        }
+        .paper-link:hover {
+            text-decoration: underline;
+        }
+        .paper-title {
+            font-style: italic;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav ul {
+                gap: 0.6rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 1.2rem;
+            }
+			
+			img.profile {
+                float: none;
+                display: block;
+                margin: 0 auto 1rem;
+            }
+			.profile-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="profile-container">
+            <img src="../maser_logo.png" alt="Maser" class="profile-photo">
+            <div>
+                <h1>Masoud Asghari</h1>
+                <p>Ph.D. in Computer Networks</p>
+                <p>Assistant Professor, University of Maragheh</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/lectures/" class="current">My Teaching</a></li>
+            <li><a href="/curriculum-vitae/">Curriculum vitae (C.V.)</a></li>
+            <li><a href="/contact-me/">Contact me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- CV Section -->
+        <section id="cv" class="section">
+            <h2>Curriculum Vitae</h2>
+            
+            <img src="Masoud_Asghari.jpg" alt="Dr. Masoud Asghari" class="profile">
+            
+            <h3>Personal Information:</h3>
+            <p><strong>Name:</strong> <a href="https://scholar.google.com/citations?user=8_1BhfQAAAAJ" target="_blank">Masoud Asghari</a> (مسعود اصغری).<br>
+            <strong>Born:</strong> March 1987 in Tabriz, Iran.</p>
+            
+            <h3>Links:</h3>
+            <ul>
+                <li>University of Maragheh: <a href="https://res.maragheh.ac.ir/~m.asghari/">https://res.maragheh.ac.ir/~m.asghari/</a></li>
+                <li>Google scholar: <a href="https://scholar.google.com/citations?user=8_1BhfQAAAAJ">https://scholar.google.com/citations?user=8_1BhfQAAAAJ</a></li>
+                <li>Researchgate: <a href="https://www.researchgate.net/profile/Masoud-Asghari">https://www.researchgate.net/profile/Masoud-Asghari</a></li>
+                <li>Publons: <a href="https://publons.com/researcher/1500806/masoud-asghari/">https://publons.com/researcher/1500806/masoud-asghari/</a></li>
+                <li>Orcid: <a href="https://orcid.org/0000-0001-6060-2626">https://orcid.org/0000-0001-6060-2626</a></li>
+            </ul>
+            
+            <h3>E-mail addresses:</h3>
+            <ul>
+                <li>Primary e-mail: masoudir [at] gmail [dot] com</li>
+                <li>University e-mail: mas.asghari [at] maragheh [dot] ac [dot] ir</li>
+            </ul>
+            
+            <h3>Education:</h3>
+            <ul>
+                <li><strong>2014-2019:</strong> Ph.D. in Information Technology (Computer Networks) at the Computer Engineering Department, Urmia University, Urmia, Iran. GPA: 19.45 / 20.</li>
+                <li><strong>2012-2014:</strong> M.Sc. in Information Technology (Computer Networks) at the Electrical Engineering Department, Sahand University of Technology, Tabriz, Iran. GPA: 19.22 / 20.</li>
+                <li><strong>2005-2010:</strong> B.Sc. in Computer Engineering (Software Engineering) at Payame Noor University, Tabriz, Iran. GPA: 16.36 / 20.</li>
+                <li><strong>2001-2005:</strong> Diploma, Math and Physics, Saadi selective high school, Tabriz, Iran. GPA: 18.31 / 20.</li>
+            </ul>
+            
+            <h3>Research Interests:</h3>
+            <p>Reinforcement learning (RL), Computer Networks, Nanonetworks, Game Theory, Network economics and pricing, Internet of things (IoT), Optical networks.</p>
+            
+            <h3>Taught Courses:</h3>
+            <p><em>MSc courses:</em><br>
+            1. Network Management, 2. Advanced Topics in Networking, 3. Web Software Development, 4. Introduction to Artificial Intelligence, 5. Seminar</p>
+            <p><em>BSc courses:</em><br>
+            1. Computer Networks; 2. Internet Engineering; 3. Database design and basics; 4. Computer Programming (C and C++); 5. Advanced programming (Java and C++); 6. Secure Computing; 7. English for Computer Science and Engineering; 8. Scientific Writing and Presentations; 9. Object-oriented programming; 10. Engineering Economics; 11. Data structures and algorithms; 12. Automata theory; 13. Computer Basics; 14. Strategic Management in IT; 15. Networks Lab; 16. Database Lab. 17. Introduction to Electrical Engineering, 18. Electrical Engineering Lab., 19. Electrical Engineering 1, 20. Electrical Engineering 2</p>
+            
+            <h3>Teaching experiences:</h3>
+            <p>8 Semesters in the University of Maragheh, Maragheh, Iran.<br>
+            1 Semesters in University of Bonab, Bonab, Iran.<br>
+            3 Semester in Tabriz Islamic Art University, Tabriz, Iran.<br>
+            11 Semesters in Nabi Akram University (UCNA), Tabriz, Iran.<br>
+            4 Semesters in Azarbaijan Shahid Madani University, Tabriz, Iran.<br>
+            4 Semesters in Urmia University, Urmia, Iran.<br>
+            1 Semester in Sahand University, Varzegan, Iran.</p>
+            
+            <h3>Languages:</h3>
+            <p>Azari (native), Farsi (excellent), English (good), Turkish (good).</p>
+            
+            <h3>Journal Papers:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Citation</th>
+                    <th>Publisher</th>
+                    <th>JCR(IF)</th>
+                    <th>JCR(Q)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[11] Eugen Dedu, Masoud Asghari, <span class="paper-title">"Ray Tracing Routing Using Packet Reception Timing in Dense Nanonetworks"</span>, <a href="https://doi.org/10.1016/j.comnet.2024.110753" class="paper-link">Computer Networks, vol.254, pp.110753, 2024</a>.</td>
+                    <td>Elsevier</td>
+                    <td>4.4</td>
+                    <td>Q1</td>
+                </tr>
+                <tr>
+                    <td>[10] Xin-Wei Yao, Lang Lin, Masoud Asghari, Yiwei Chen, Md Mehedi Hassan Dorjoy and Qiang Li, <span class="paper-title">"CHLR: Central High-Speed Lane Routing Protocol for Intra-Body Flow-Guided Nanonetworks in Terahertz Band Communication"</span>, <a href="https://doi.org/10.1016/j.nancom.2024.100511" class="paper-link">Nano Communication Networks, vol. 40, pp. 100511, 2024</a>.</td>
+                    <td>Elsevier</td>
+                    <td>2.9</td>
+                    <td>Q2</td>
+                </tr>
+                <tr>
+                    <td>[9] Masoud Asghari, <span class="paper-title">"Integration of Semi-Permanent Wired Clusters into Intrabody Wireless Perpetual Nanonetworks"</span>, <a href="https://doi.org/10.1007/s11235-023-01051-z" class="paper-link">Telecommunication Systems, vol. 84, no. 3, pp. 285–301, 2023</a>.</td>
+                    <td>Springer</td>
+                    <td>1.7</td>
+                    <td>Q3</td>
+                </tr>
+                <tr>
+                    <td>[8] Masoud Asghari, <span class="paper-title">"Intrabody Hybrid Perpetual Nanonetworks Based on Simultaneous Wired and Wireless Nanocommunications"</span>, <a href="https://doi.org/10.1016/j.nancom.2022.100406" class="paper-link">Nano Communication Networks, vol. 32–33, pp. 100406, 2022</a>.</td>
+                    <td>Elsevier</td>
+                    <td>2.9</td>
+                    <td>Q2</td>
+                </tr>
+                <tr>
+                    <td>[7] Masoud Asghari, Saleh Yousefi and Dusit Niyato, <span class="paper-title">"An Analysis of Service Bundles of Mobile Network Operators with Free Services Included"</span>, <a href="https://doi.org/10.1109/TMC.2019.2914683" class="paper-link">IEEE Transactions on Mobile Computing, vol. 19, no. 8, pp. 1789–1803, 2020</a>.</td>
+                    <td>IEEE</td>
+                    <td>5.577</td>
+                    <td>Q1</td>
+                </tr>
+                <tr>
+                    <td>[6] Masoud Asghari, Saleh Yousefi and Dusit Niyato, <span class="paper-title">"Pricing Strategies of IoT Wide Area Network Service Providers with Complementary Services Included"</span>, <a href="https://doi.org/10.1016/j.jnca.2019.102426" class="paper-link">Journal of Network and Computer Applications, vol. 147, no. 8, pp. 102426, 2019</a>.</td>
+                    <td>Elsevier</td>
+                    <td>5.570</td>
+                    <td>Q1</td>
+                </tr>
+                <tr>
+                    <td>[5] Masoud Asghari and Saleh Yousefi, <span class="paper-title">"Zero-rating Internet Platforms Formation: A Game Theoretic Analysis"</span>, <a href="https://doi.org/10.1007/s11235-018-0504-7" class="paper-link">Telecommunication Systems, vol. 71, no. 1, pp. 93–109, 2019</a>.</td>
+                    <td>Springer</td>
+                    <td>1.734</td>
+                    <td>Q3</td>
+                </tr>
+                <tr>
+                    <td>[4] Masoud Asghari, Jamshid Bagherzadeh and Saleh Yousefi, <span class="paper-title">"Loss estimation and control mechanism in bufferless optical packet switched networks based on multilayer perceptron"</span>, <a href="https://doi.org/10.1007/s11107-017-0743-7" class="paper-link">Photonic Network Communications, vol. 35, no. 2, pp. 274–286, 2018</a>.</td>
+                    <td>Springer</td>
+                    <td>1.328</td>
+                    <td>Q3</td>
+                </tr>
+                <tr>
+                    <td>[3] Masoud Asghari and Saleh Yousefi, <span class="paper-title">"Pricing mechanism for interconnection between phone operators and virtual mobile VoIP operators"</span>, <a href="https://doi.org/10.1007/s11235-017-0326-z" class="paper-link">Telecommunication Systems, vol. 67, no. 1, pp. 133–147, 2018</a>.</td>
+                    <td>Springer</td>
+                    <td>1.707</td>
+                    <td>Q3</td>
+                </tr>
+                <tr>
+                    <td>[2] Masoud Asghari and Akbar Ghaffarpour Rahbar, <span class="paper-title">"Contentionless transmission in buffer-less slotted optical packet switched networks"</span>, <a href="https://doi.org/10.1016/j.yofte.2016.04.013" class="paper-link">Optical Fiber Technology, vol. 30, pp. 134–146, 2016</a>.</td>
+                    <td>Elsevier</td>
+                    <td>1.678</td>
+                    <td>Q2</td>
+                </tr>
+                <tr>
+                    <td>[1] Masoud Asghari and Akbar Ghaffarpour Rahbar, <span class="paper-title">"Contention avoidance in bufferless slotted optical packet switched networks with egress switch coordination"</span>, <a href="https://doi.org/10.1016/j.osn.2015.05.001" class="paper-link">Optical Switching and Networking, vol. 18, Part 1, pp. 104–119, 2015</a>.</td>
+                    <td>Elsevier</td>
+                    <td>1.137</td>
+                    <td>Q2</td>
+                </tr>
+            </tbody>
+        </table>
+            
+            <h3>Book Chapters:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Citation</th>
+                        <th>Publisher</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[1] Masoud Asghari, Saleh Yousefi and Dusit Niyato, <span class="paper-title">"Game Theoretic Modeling of Zero-Rating Internet Provisioning"</span> in <a href="https://doi.org/10.1007/978-3-319-78262-1_37" class="paper-link">Encyclopedia of Wireless Networks, X. (Sherman) Shen, X. Lin, and K. Zhang, Eds. Cham: Springer International Publishing, 2020, pp. 517–525</a>.</td>
+                        <td>Springer</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Conference Papers:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Citation</th>
+                    <th>Publisher</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td dir="rtl" style="text-align: right;">[8] مسعود اصغری و رضوان غفارزاده درخشان، 1402، شیوه های مسیریابی و تشخیص موقعیت نانوروبات‌ها در بدن انسان به‌کمک الگوریتم‌های یادگیری ماشین و داده‌های سنسور، <a href="https://civilica.com/doc/1966953/" class="paper-link">پنجمین کنفرانس بین‌المللی محاسبات نرم، گیلان، ایران</a>.</td>
+                    <td>Civilica</td>
+                </tr>
+                <tr>
+                    <td>[7] Xin-Wei Yao, Lang Lin and Masoud Asghari, <span class="paper-title">"A Central High-speed Lane Routing Protocol for Flow-Guided Intra-body Nanonetworks"</span>, <a href="https://doi.org/10.1109/ICCCS57501.2023.10151415" class="paper-link">2023 8th International Conference on Computer and Communication Systems (ICCCS), Guangzhou, China, April 2023, pp. 247–252</a>.</td>
+                    <td>IEEE</td>
+                </tr>
+                <tr>
+                    <td>[6] Eugen Dedu and Masoud Asghari, <span class="paper-title">"Time-based ray tracing forwarding in dense nanonetworks"</span>, <a href="https://doi.org/10.1007/978-3-031-29056-5_43" class="paper-link">37th International Conference on Advanced Information Networking and Applications (AINA-2023), Juiz de Fora, Brazil, March 2023, pp. 497–508</a>.</td>
+                    <td>Springer</td>
+                </tr>
+                <tr>
+                    <td>[5] Masoud Asghari, Saleh Yousefi and Dusit Niyato, <span class="paper-title">"A Mobile Network Operator's Decision for Partnership with Zero-rating Internet Platforms"</span>, <a href="https://doi.org/10.1109/GLOCOM.2017.8254577" class="paper-link">2017 IEEE Global Communications Conference (GLOBECOM), Singapore, December 2017, pp. 1–6</a>.</td>
+                    <td>IEEE</td>
+                </tr>
+                <tr>
+                    <td>[4] Saleh Yousefi, Jamshid Bagherzadeh and Masoud Asghari, <span class="paper-title">"An Artificial Neural Network Approach for Loss Estimation in Bufferless Optical Packet Switched Networks"</span>, <a href="https://doi.org/10.1109/ICC.2017.7996816" class="paper-link">2017 IEEE International Conference on Communications (ICC), Paris, France, May 2017, pp. 1–6</a>.</td>
+                    <td>IEEE</td>
+                </tr>
+                <tr>
+                    <td dir="rtl" style="text-align: right;">[3] مسعود اصغری و صالح یوسفی، 1396، تحلیل شکل گیری پلتفرم های تسهیل کننده ارایه سرویس های وب رایگان zero-rating, <a href="https://www.civilica.com/Paper-DCBDP03-DCBDP03_001.html" class="paper-link">سومین کنفرانس ملی محاسبات توزیعی و پردازش داده های بزرگ,تبریز,ایران</a>.</td>
+                    <td>Civilica</td>
+                </tr>
+                <tr>
+                    <td dir="rtl" style="text-align: right;">[2] ماریه محمودی، صالح یوسفی و مسعود اصغری، 1395، تحلیل اقتصادی تعامل اپراتورهای تلفن و اپراتورهای VoIP نرم افزاری، <a href="https://www.civilica.com/Paper-ICIKT08-ICIKT08_104.html" class="paper-link">هشتمین کنفرانس بین المللی فناوری اطلاعات ودانش، همدان، ایران</a>.</td>
+                    <td>Civilica</td>
+                </tr>
+                <tr>
+                    <td dir="rtl" style="text-align: right;">[1] مسعود اصغری و صالح یوسفی، 1394، ارائه یک مکانیزم قیمت گذاری با استفاده از نظریه بازی‌ها جهت اتصال اپراتورهای VoIP نرم افزاری و اپراتورهای تلفن، <a href="http://csi.org.ir/fa/paper/view/id/1856" class="paper-link">بیست و یکمین کنفرانس ملی سالانه انجمن کامپیوتر، تهران، ایران</a>.</td>
+                    <td>Computer Society of Iran</td>
+                </tr>
+            </tbody>
+        </table>
+            
+            <h3>Research Theses:</h3>
+            <ul>
+                <li><strong>Ph.D. Thesis:</strong> "Economic incentives for telecommunication operators to interact with content-service providers aiming at provisioning innovative services for users", Urmia University, Urmia, Iran, January 2019. Supervisor: Dr. Saleh Yousefi, Advisor: Dr. Dusit Niyato</li>
+                <li><strong>M.Sc. Thesis:</strong> "Novel contention avoidance approaches in buffer-less optical packet switched networks", Sahand University of Technology, Tabriz, Iran, May 2014. Supervisor: Dr. Akbar Ghaffarpour Rahbar</li>
+                <li><strong>B.Sc. Thesis:</strong> "Web-based forum maker written in PHP", Payame Noor University, Tabriz, Iran, April 2010. Supervisor: Dr. Manouchehr Zadahmad</li>
+            </ul>
+            
+            <h3>Professional Activities:</h3>
+            <ul>
+                <li>Assistant Professor at the faculty of Engineering, University of Maragheh, Maragheh, Iran (Since June 2021).</li>
+                <li>IT manager and network admin, University of Maragheh (Since September 2021).</li>
+                <li>TPC Member of 7th National and 1st International Conference on Distributed Computing and Big Data Processing (DCBDP2022), Tabriz, Iran (May 2022).</li>
+                <li>Freelancer web-developer and programmer based on masphp.com (2007–2012).</li>
+            </ul>
+            
+            <h3>Graduate Students Supervised:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Degree</th>
+                        <th>Title of Thesis</th>
+                        <th>Student Name</th>
+                        <th>Role</th>
+                        <th>Defense Date</th>
+                        <th>University</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>MSc of Computer Networks</td>
+                        <td>A novel OSPF based routing protocol for improving SDN performance</td>
+                        <td>Mohsen Fadaeian</td>
+                        <td>Supervisor</td>
+                        <td>26 Dec 2020</td>
+                        <td>Nabi Akram University (UCNA)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Skills:</h3>
+            <ol>
+                <li>Academical: Network Simulation using NS-3, OPNET, MATLAB, Maple.</li>
+                <li>Network management: Cisco, Fortigate, MikroTik, Linux and Windows servers.</li>
+                <li>Programming: Python, PHP, C++, JAVA, Android, HTML, JavaScript, CSS.</li>
+                <li>Micro-controller programming (Arduino), digital circuit design and prototyping (Fritzing) focused on IoT and networking.</li>
+                <li>Office tools: Latex and Microsoft Word, Excel, PowerPoint.</li>
+                <li>Graphics editing: Adobe Photoshop and Adobe Illustrator.</li>
+                <li>Operating systems: Microsoft Windows, Linux.</li>
+            </ol>
+            
+            <h3>Some of The Web Projects:</h3>
+            <p>I used the following skills in my web projects:</p>
+            <ul>
+                <li>PHP programming with/without CodeIgniter framework, MySQL database design, JavaScript with/without jQuery framework, CSS and HTML.</li>
+                <li>Linux based web-servers and network applications install and config.</li>
+                <li>Graphic editor software: Adobe Photoshop and Adobe Illustrator.</li>
+            </ul>
+            <p>Most of my webdesign projects (for customers) are no longer online and you can see a saved copy of them at archive.org as:</p>
+            <ul>
+                <li><a href="http://web.archive.org/web/20140207233409/http://masphp.com/">masphp.com</a> (my personal freelancing website)</li>
+                <li><a href="http://web.archive.org/web/20091231124854/http://hodadownload.com/">hodadownload.com</a></li>
+                <li><a href="http://web.archive.org/web/20111101152833/http://www.ebookset.com/">ebookset.com</a></li>
+                <li>bonyanfarad.com</li>
+                <li><a href="http://web.archive.org/web/20130118070230/http://deltamarine.ir/fa/">deltamarine.ir</a></li>
+				<li><a href="http://web.archive.org/web/20130824095401/http://www.alghatc.com/fa/">alghatc.com</a></li>
+				<li><a href="http://web.archive.org/web/20121127024042/http://www.ccnet.ir/">ccnet.ir</a></li>
+				<li><a href="http://web.archive.org/web/20130604104648/http://www.golpasand.com/">golpasand.com</a></li>
+				<li>aiv-co.com</li>
+				<li>azartejarat.com</li>
+				<li><a href="http://web.archive.org/web/20110225010349/http://kharidcenter.com/">kharidcenter.com</a></li>
+				<li>nubax.ir</li>
+				<li>sungroup.ir</li>
+				<li>azarhesab.com</li>
+				<li>iciau.com</li>
+                <li>and much more...</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Masoud Asghari. All rights reserved.</p>
+    </footer>
+</body>
+</html>
