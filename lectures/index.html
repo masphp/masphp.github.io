@@ -1,1 +1,972 @@
-a
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Teaching - Masoud Asghari | Ph.D. in Computer Networks</title>
+    <style>
+        :root {
+            --primary: #1a365d;       /* Deep navy */
+            --secondary: #2c5282;     /* Medium blue */
+            --accent: #4299e1;        /* Bright blue */
+            --light: #f8fafc;         /* Off-white */
+            --dark: #2d3748;          /* Dark gray */
+            --text: #4a5568;          /* Soft gray */
+            --header-bg: #ebf8ff;     /* Light blue header */
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            background-color: white;
+        }
+        
+        /* Header */
+        header {
+            background: var(--header-bg);
+            color: var(--primary);
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+		
+		.profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+		
+		.profile-photo {
+            width: 110px;
+            height: 110px;
+            border-radius: 10%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin: 0.2rem 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        header p {
+            margin: 0.3rem 0;
+            font-size: 1.1rem;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--dark);
+            padding: 0.8rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+		
+		nav a.current {
+            text-decoration: underline;
+        }
+        
+        nav a:hover {
+            background: var(--accent);
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            margin-top: 0.8rem;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .button:hover {
+            background: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .research-interests {
+            columns: 2;
+            column-gap: 2rem;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+		
+		/* Teaching Table Styles */
+        .teaching-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        .teaching-table th, 
+        .teaching-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .teaching-table th {
+            background-color: var(--secondary);
+            color: white;
+            font-weight: 500;
+        }
+        
+        .teaching-table tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+        
+        .teaching-table tr:hover {
+            background-color: #ebf8ff;
+        }
+        
+        .course-title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .autumn-semester {
+            color: #e53e3e; /* Red for autumn */
+            font-weight: 500;
+        }
+        
+        .spring-semester {
+            color: #38a169; /* Green for spring */
+            font-weight: 500;
+        }
+        
+        .course-material {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .course-material a {
+            display: block;
+            margin: 0.25rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .course-material a:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav ul {
+                gap: 0.6rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 1.2rem;
+            }
+			
+			.teaching-table {
+                display: block;
+                overflow-x: auto;
+            }
+			.profile-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="profile-container">
+            <img src="../maser_logo.png" alt="Maser" class="profile-photo">
+            <div>
+                <h1>Masoud Asghari</h1>
+                <p>Ph.D. in Computer Networks</p>
+                <p>Assistant Professor, University of Maragheh</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/lectures/" class="current">My Teaching</a></li>
+            <li><a href="/curriculum-vitae/">Curriculum vitae (C.V.)</a></li>
+            <li><a href="/contact-me/">Contact me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Teaching Section -->
+        <section id="teaching" class="section">
+            <h2>My Teaching</h2>
+            <p>Here are the courses I have taught:</p>
+            
+            <table class="teaching-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Course Title</th>
+                        <th>Semester</th>
+                        <th>University</th>
+                    </tr>
+                </thead>
+                <tbody>
+					<tr>
+                        <td>79</td>
+                        <td>
+                            <div class="course-title">Seminar (M.Sc. course)</div>
+                        </td>
+                        <td class="spring-semester">Spring 2025</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+					<tr>
+                        <td>78</td>
+                        <td>
+                            <div class="course-title">Electrical Engineering 1</div>
+							<div class="course-material">
+                                <a href="EE_P1.pdf">EE_P1</a>
+                                <a href="kvl_kcl_examples.pdf">kvl_kcl_examples</a>
+                                <a href="EE_P2.pdf">EE_P2</a>
+                                <a href="EE_P3.pdf">EE_P3</a>
+                                <a href="EE_P4.pdf">EE_P4</a>
+                                <a href="cheatsheet.pdf">cheatsheet</a>
+                                <a href="electrical-engineering1.pdf">electrical engineering1 slides with comments</a>
+                            </div>
+                        </td>
+                        <td class="spring-semester">Spring 2025</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+					<tr>
+                        <td>77</td>
+                        <td>
+                            <div class="course-title">Computer and biological computation</div>
+                        </td>
+                        <td class="spring-semester">Spring 2025</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>76</td>
+                        <td>
+                            <div class="course-title">Electrical Engineering Lab.</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2024</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>75</td>
+                        <td>
+                            <div class="course-title">Introduction to Data structures and programming</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2024</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>74</td>
+                        <td>
+                            <div class="course-title">Introduction to Electrical Engineering</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2024</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>73</td>
+                        <td>
+                            <div class="course-title">Electrical Engineering 2</div>
+                            <!-- <div class="course-material">
+                                <a href="Electricity-1v2.pdf">Electricity 1v2</a>
+                                <a href="Electricity-2.pdf">Electricity 2</a>
+                                <a href="Electricity-3.pdf">Electricity 3</a>
+                                <a href="Electricity-4.pdf">Electricity 4</a>
+                                <a href="Electricity-5.pdf">Electricity 5</a>
+                                <a href="Electricity-6.pdf">Electricity 6</a>
+                            </div>
+                            <div class="course-material">
+                                - Comments: 
+                                <a href="Electricity-2_comments.pdf">Electricity 2_comments</a>
+                                <a href="Electricity-3_comments.pdf">Electricity 3_comments</a>
+                                <a href="Electricity-4_comments.pdf">Electricity 4_comments</a>
+                                <a href="Electricity-5and6_comments.pdf">Electricity 5and6_comments</a>
+                            </div> -->
+                        </td>
+                        <td class="autumn-semester">Autumn 2024</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>72</td>
+                        <td>
+                            <div class="course-title">Seminar (M.Sc. course)</div>
+                        </td>
+                        <td class="spring-semester">Spring 2024</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>71</td>
+                        <td>
+                            <div class="course-title">Computer and biological computation</div>
+                        </td>
+                        <td class="spring-semester">Spring 2024</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>70</td>
+                        <td>
+                            <div class="course-title">Computer programming</div>
+                        </td>
+                        <td class="spring-semester">Spring 2024</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>69</td>
+                        <td>
+                            <div class="course-title">Electrical Engineering 1</div>
+                        </td>
+                        <td class="spring-semester">Spring 2024</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>68</td>
+                        <td>
+                            <div class="course-title">Electrical Engineering Lab.</div>
+                        </td>
+                        <td class="spring-semester">Spring 2024</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>67</td>
+                        <td>
+                            <div class="course-title">Introduction to Data structures and programming</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2023</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>66</td>
+                        <td>
+                            <div class="course-title">Electrical Engineering 2</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2023</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>65</td>
+                        <td>
+                            <div class="course-title">Introduction to Electrical Engineering</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2023</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>64</td>
+                        <td>
+                            <div class="course-title">Electrical Engineering Lab.</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2023</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>63</td>
+                        <td>
+                            <div class="course-title">Electrical Engineering 1</div>
+                        </td>
+                        <td class="spring-semester">Spring 2023</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>62</td>
+                        <td>
+                            <div class="course-title">Computer application in Psychology</div>
+                        </td>
+                        <td class="spring-semester">Spring 2023</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>61</td>
+                        <td>
+                            <div class="course-title">Computer and biological computation</div>
+                        </td>
+                        <td class="spring-semester">Spring 2023</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>60</td>
+                        <td>
+                            <div class="course-title">Introduction to Electrical Engineering</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2022</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>59</td>
+                        <td>
+                            <div class="course-title">Electrical Engineering Lab.</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2022</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>58</td>
+                        <td>
+                            <div class="course-title">Introduction to Data structures and programming</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2022</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>57</td>
+                        <td>
+                            <div class="course-title">Internet Engineering</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2022</td>
+                        <td>University of Bonab</td>
+                    </tr>
+                    <tr>
+                        <td>56</td>
+                        <td>
+                            <div class="course-title">Electrical Engineering 1</div>
+                        </td>
+                        <td class="spring-semester">Spring 2022</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>55</td>
+                        <td>
+                            <div class="course-title">Computer and biological computation</div>
+                        </td>
+                        <td class="spring-semester">Spring 2022</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>54</td>
+                        <td>
+                            <div class="course-title">Computer application in Psychology</div>
+                        </td>
+                        <td class="spring-semester">Spring 2022</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>53</td>
+                        <td>
+                            <div class="course-title">Introduction to Electrical Engineering</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2021</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>52</td>
+                        <td>
+                            <div class="course-title">Electrical Engineering Lab.</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2021</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>51</td>
+                        <td>
+                            <div class="course-title">Introduction to Data structures and programming</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2021</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td>
+                            <div class="course-title">Computer and programming Basics</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2021</td>
+                        <td>University of Maragheh</td>
+                    </tr>
+                    <tr>
+                        <td>49</td>
+                        <td>
+                            <div class="course-title">Introduction to Artificial Intelligence (M.Sc. course)</div>
+                        </td>
+                        <td class="spring-semester">Spring 2021</td>
+                        <td>Tabriz Islamic Art University</td>
+                    </tr>
+                    <tr>
+                        <td>48</td>
+                        <td>
+                            <div class="course-title">Web Software Development (M.Sc. course)</div>
+                        </td>
+                        <td class="spring-semester">Spring 2021</td>
+                        <td>Tabriz Islamic Art University</td>
+                    </tr>
+                    <tr>
+                        <td>47</td>
+                        <td>
+                            <div class="course-title">Advanced Computer Networks (M.Sc. course)</div>
+                        </td>
+                        <td class="spring-semester">Spring 2021</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>46</td>
+                        <td>
+                            <div class="course-title">Network management (M.Sc. course)</div>
+                        </td>
+                        <td class="spring-semester">Spring 2021</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>45</td>
+                        <td>
+                            <div class="course-title">Introduction to Artificial Intelligence (M.Sc. course)</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2020</td>
+                        <td>Tabriz Islamic Art University</td>
+                    </tr>
+                    <tr>
+                        <td>44</td>
+                        <td>
+                            <div class="course-title">Computer Networks (M.Sc. course)</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2020</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>43</td>
+                        <td>
+                            <div class="course-title">Automata theory</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2020</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>42</td>
+                        <td>
+                            <div class="course-title">Computer Game Design</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2020</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>41</td>
+                        <td>
+                            <div class="course-title">Internet Engineering</div>
+                        </td>
+                        <td class="spring-semester">Spring 2020</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td>
+                            <div class="course-title">Network management (M.Sc. course)</div>
+                        </td>
+                        <td class="spring-semester">Spring 2020</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>39</td>
+                        <td>
+                            <div class="course-title">Web Software Development (M.Sc. course)</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2019</td>
+                        <td>Tabriz Islamic Art University</td>
+                    </tr>
+                    <tr>
+                        <td>38</td>
+                        <td>
+                            <div class="course-title">Database Basics</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2019</td>
+                        <td>Tabriz Islamic Art University</td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td>
+                            <div class="course-title">Advanced Topics in Networking (M.Sc. course)</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2019</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td>
+                            <div class="course-title">Automata theory</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2019</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td>
+                            <div class="course-title">Computer Game Design</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2019</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td>
+                            <div class="course-title">Secure Computing</div>
+                        </td>
+                        <td class="spring-semester">Spring 2019</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td>
+                            <div class="course-title">Data structures</div>
+                        </td>
+                        <td class="spring-semester">Spring 2019</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td>
+                            <div class="course-title">Network management (M.Sc. course)</div>
+                        </td>
+                        <td class="spring-semester">Spring 2019</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td>
+                            <div class="course-title">Secure Computing</div>
+                        </td>
+                        <td class="spring-semester">Spring 2019</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>
+                            <div class="course-title">Computer Networks</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2018</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>
+                            <div class="course-title">Networks' Lab.</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2018</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>
+                            <div class="course-title">English for Computer Science and Engineering</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2018</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>
+                            <div class="course-title">Engineering Economics</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2018</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>
+                            <div class="course-title">Automata theory</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2018</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>
+                            <div class="course-title">Computer Game Design</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2018</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>
+                            <div class="course-title">Computer Programming</div>
+                        </td>
+                        <td class="spring-semester">Spring 2018</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>
+                            <div class="course-title">Computer Networks</div>
+                        </td>
+                        <td class="spring-semester">Spring 2018</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>
+                            <div class="course-title">Secure Computing</div>
+                        </td>
+                        <td class="spring-semester">Spring 2018</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>
+                            <div class="course-title">Computer Basics</div>
+                        </td>
+                        <td class="spring-semester">Spring 2018</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>
+                            <div class="course-title">Secure Computing</div>
+                        </td>
+                        <td class="spring-semester">Spring 2018</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>
+                            <div class="course-title">Internet Engineering</div>
+                        </td>
+                        <td class="spring-semester">Spring 2018</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>
+                            <div class="course-title">Internet Engineering</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2017</td>
+                        <td>Urmia University</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>
+                            <div class="course-title">English for Computer Science and Engineering</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2017</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>
+                            <div class="course-title">Scientific Writing and Presentations</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2017</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>
+                            <div class="course-title">Computer Basics</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2017</td>
+                        <td>Azarbaijan Shahid Madani University</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>
+                            <div class="course-title">Engineering Economics</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2017</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>
+                            <div class="course-title">Strategic Management in IT</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2017</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>
+                            <div class="course-title">Computer Game Design</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2017</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>
+                            <div class="course-title">Object-oriented programming</div>
+                        </td>
+                        <td class="spring-semester">Spring 2017</td>
+                        <td>SUT</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>
+                            <div class="course-title">Data structures and algorithms</div>
+                        </td>
+                        <td class="spring-semester">Spring 2017</td>
+                        <td>SUT</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>
+                            <div class="course-title">Internet Engineering</div>
+                        </td>
+                        <td class="spring-semester">Spring 2017</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>
+                            <div class="course-title">Database Lab.</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2016</td>
+                        <td>Urmia University</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>
+                            <div class="course-title">Networks' Lab.</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2016</td>
+                        <td>Urmia University</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            <div class="course-title">Database design</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2016</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <div class="course-title">Automata theory</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2016</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <div class="course-title">Data structures</div>
+                        </td>
+                        <td>Summer 2016</td>
+                        <td>UCNA</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="course-title">Networks' Lab.</div>
+                        </td>
+                        <td class="spring-semester">Spring 2016</td>
+                        <td>Urmia University</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <div class="course-title">Advanced programming</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2015</td>
+                        <td>Urmia University</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="course-title">Networks' Lab.</div>
+                        </td>
+                        <td class="autumn-semester">Autumn 2015</td>
+                        <td>Urmia University</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Masoud Asghari. All rights reserved.</p>
+    </footer>
+</body>
+</html>
